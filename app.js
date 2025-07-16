@@ -438,6 +438,8 @@ class GitPresentationController {
                 <div class="flow-item">
                     <h3>📦 Repositório Distribuído</h3>
                     <p>Cada desenvolvedor tem uma cópia completa do projeto</p>
+                    <p>Trabalho independente e offline</p>
+                    <p>Sincronização quando necessário</p>
                 </div>
                 <div class="flow-item">
                     <h3>🔄 Fluxo Básico</h3>
@@ -470,10 +472,11 @@ class GitPresentationController {
                 </div>
                 <div class="concept">
                     <h3>📋 Comandos Úteis</h3>
-                    <pre><code>git remote -v
-    git remote show origin
-    git fetch upstream
-    git pull upstream main</code></pre>
+                    <pre><code>
+            git remote -v                    # Listar remotes
+            git remote add upstream <url>    # Adicionar remote
+            git remote set-url origin <url>  # Alterar URL
+                    </code></pre>
                 </div>
                 </div>
             `

@@ -4,7 +4,7 @@ class GitPresentationController {
         this.currentSlide = 1;
         this.totalSlides = 54;
         this.isFullscreen = false;
-        
+
         // Module configuration
         this.modules = [
             { id: 1, title: "📚 Introdução e Revisão", slides: [1, 2, 3, 4, 5, 6] },
@@ -16,16 +16,16 @@ class GitPresentationController {
             { id: 7, title: "⭐ Boas Práticas", slides: [43, 44, 45, 46, 47, 48, 49, 50, 51] },
             { id: 8, title: "📝 Slides Extras", slides: [52, 53, 54] }
         ];
-        
+
         this.init();
     }
-    
+
     init() {
         this.bindEvents();
         this.updateUI();
         this.generateMissingSlides();
     }
-    
+
     bindEvents() {
         // Navigation buttons - FIX: Ensure correct button behavior
         document.getElementById('prev-btn').addEventListener('click', (e) => {
@@ -40,20 +40,20 @@ class GitPresentationController {
             e.stopPropagation();
             this.toggleFullscreen();
         });
-        
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
-        
-        
+
+
         // Fullscreen change events
         document.addEventListener('fullscreenchange', () => this.handleFullscreenChange());
         document.addEventListener('webkitfullscreenchange', () => this.handleFullscreenChange());
         document.addEventListener('mozfullscreenchange', () => this.handleFullscreenChange());
         document.addEventListener('MSFullscreenChange', () => this.handleFullscreenChange());
     }
-    
+
     handleKeyboard(e) {
-        switch(e.key) {
+        switch (e.key) {
             case 'ArrowRight':
             case 'Space':
                 e.preventDefault();
@@ -83,69 +83,69 @@ class GitPresentationController {
                 break;
         }
     }
-    
+
     nextSlide() {
         if (this.currentSlide < this.totalSlides) {
             this.goToSlide(this.currentSlide + 1);
         }
     }
-    
+
     previousSlide() {
         if (this.currentSlide > 1) {
             this.goToSlide(this.currentSlide - 1);
         }
     }
-    
+
     goToSlide(slideNumber) {
         if (slideNumber < 1 || slideNumber > this.totalSlides) return;
-        
+
         const currentSlideElement = document.querySelector('.slide.active');
         const newSlideElement = document.querySelector(`[data-slide="${slideNumber}"]`);
-        
+
         if (!newSlideElement) return;
-        
+
         const direction = slideNumber > this.currentSlide ? 'right' : 'left';
-        
+
         // Remove active class from current slide
         if (currentSlideElement) {
             currentSlideElement.classList.remove('active');
             currentSlideElement.classList.add(direction === 'right' ? 'prev' : 'next');
         }
-        
+
         // Add active class to new slide
         newSlideElement.classList.remove('prev', 'next');
         newSlideElement.classList.add('active');
-        
+
         // Add animation class
         newSlideElement.classList.add(`entering-${direction}`);
-        
+
         // Remove animation class after transition
         setTimeout(() => {
             newSlideElement.classList.remove(`entering-${direction}`);
         }, 400);
-        
+
         this.currentSlide = slideNumber;
         this.updateUI();
     }
-    
+
     updateUI() {
         // Update slide counter
         document.getElementById('current-slide').textContent = this.currentSlide;
         document.getElementById('total-slides').textContent = this.totalSlides;
-        
+
         // Update progress bar
         const progress = (this.currentSlide / this.totalSlides) * 100;
         document.getElementById('progress-fill').style.width = `${progress}%`;
-        
+
         // Update module indicator
         const currentModule = this.getCurrentModule();
         document.getElementById('module-indicator').textContent = currentModule.title;
-        
+
         // Update navigation buttons
         document.getElementById('prev-btn').disabled = this.currentSlide === 1;
         document.getElementById('next-btn').disabled = this.currentSlide === this.totalSlides;
     }
-    
+
     getCurrentModule() {
         for (const module of this.modules) {
             if (module.slides.includes(this.currentSlide)) {
@@ -154,7 +154,7 @@ class GitPresentationController {
         }
         return this.modules[0]; // fallback
     }
-    
+
     toggleFullscreen() {
         if (!this.isFullscreen) {
             this.enterFullscreen();
@@ -162,10 +162,10 @@ class GitPresentationController {
             this.exitFullscreen();
         }
     }
-    
+
     enterFullscreen() {
         const element = document.documentElement;
-        
+
         if (element.requestFullscreen) {
             element.requestFullscreen();
         } else if (element.webkitRequestFullscreen) {
@@ -175,10 +175,10 @@ class GitPresentationController {
         } else if (element.msRequestFullscreen) {
             element.msRequestFullscreen();
         }
-        
+
         document.body.classList.add('fullscreen');
     }
-    
+
     exitFullscreen() {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -189,43 +189,43 @@ class GitPresentationController {
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         }
-        
+
         document.body.classList.remove('fullscreen');
     }
-    
+
     handleFullscreenChange() {
-        this.isFullscreen = !!(document.fullscreenElement || 
-                             document.webkitFullscreenElement || 
-                             document.mozFullScreenElement || 
-                             document.msFullscreenElement);
-        
+        this.isFullscreen = !!(document.fullscreenElement ||
+            document.webkitFullscreenElement ||
+            document.mozFullScreenElement ||
+            document.msFullscreenElement);
+
         if (!this.isFullscreen) {
             document.body.classList.remove('fullscreen');
         }
     }
-    
+
     generateMissingSlides() {
         const container = document.getElementById('slide-container');
         const existingSlides = container.querySelectorAll('.slide').length;
-        
+
         if (existingSlides >= this.totalSlides) return;
-        
+
         // Generate missing slides with placeholder content
         for (let i = existingSlides + 1; i <= this.totalSlides; i++) {
             const slide = document.createElement('div');
             slide.className = 'slide';
             slide.setAttribute('data-slide', i);
-            
+
             const content = this.generateSlideContent(i);
             slide.innerHTML = content;
-            
+
             container.appendChild(slide);
         }
     }
-    
+
     generateSlideContent(slideNumber) {
         const slideData = this.getSlideData(slideNumber);
-        
+
         return `
             <div class="slide-content">
                 <h2>${slideData.title}</h2>
@@ -235,7 +235,7 @@ class GitPresentationController {
             </div>
         `;
     }
-    
+
     getSlideData(slideNumber) {
         const slideMap = {
             11: {
@@ -341,7 +341,7 @@ git push origin main
                 `
             }
         };
-        
+
         // Continue with more slides...
         const defaultSlides = {
             16: { title: "🎮 Comandos de Gerenciamento", content: this.getBranchCommandsContent() },
@@ -380,13 +380,13 @@ git push origin main
             49: { title: "🚀 Próximos Passos", content: this.getNextStepsContent() },
             50: { title: "📋 Resumo Final", content: this.getFinalSummaryContent() }
         };
-        
+
         return slideMap[slideNumber] || defaultSlides[slideNumber] || {
             title: `Slide ${slideNumber}`,
             content: `<p>Conteúdo do slide ${slideNumber}</p>`
         };
     }
-    
+
     getBranchCommandsContent() {
         return `
             <div class="commands-grid">
@@ -414,7 +414,7 @@ git push origin -u novo-nome</code></pre>
             </div>
         `;
     }
-    
+
     getNamingConventionsContent() {
         return `
             <div class="naming-conventions">
@@ -444,7 +444,7 @@ git push origin -u novo-nome</code></pre>
             </div>
         `;
     }
-    
+
     getBranchProtectionContent() {
         return `
             <div class="branch-protection">
@@ -470,7 +470,7 @@ git push origin -u novo-nome</code></pre>
             </div>
         `;
     }
-    
+
     getBranchSyncContent() {
         return `
             <div class="sync-commands">
@@ -493,7 +493,7 @@ git rebase --continue</code></pre>
             </div>
         `;
     }
-    
+
     getExercise3Content() {
         return `
             <div class="exercise">
@@ -509,7 +509,7 @@ git rebase --continue</code></pre>
             </div>
         `;
     }
-    
+
     getPullRequestIntroContent() {
         return `
             <div class="pr-intro">
@@ -536,7 +536,7 @@ git rebase --continue</code></pre>
             </div>
         `;
     }
-    
+
     getPRAnatomyContent() {
         return `
             <div class="pr-anatomy">
@@ -570,7 +570,7 @@ git rebase --continue</code></pre>
             </div>
         `;
     }
-    
+
     getEffectivePRContent() {
         return `
             <div class="effective-pr">
@@ -602,7 +602,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getCodeReviewContent() {
         return `
             <div class="code-review-process">
@@ -632,7 +632,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getReviewBestPracticesContent() {
         return `
             <div class="review-best-practices">
@@ -662,7 +662,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getCommentTypesContent() {
         return `
             <div class="comment-types">
@@ -692,7 +692,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getMergeStrategiesContent() {
         return `
             <div class="merge-strategies">
@@ -717,7 +717,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getExercise4Content() {
         return `
             <div class="exercise">
@@ -733,7 +733,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getConflictIntroContent() {
         return `
             <div class="conflict-intro">
@@ -759,7 +759,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getIdentifyConflictsContent() {
         return `
             <div class="identify-conflicts">
@@ -783,7 +783,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getConflictMarkersContent() {
         return `
             <div class="conflict-markers">
@@ -805,7 +805,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getResolutionToolsContent() {
         return `
             <div class="resolution-tools">
@@ -831,7 +831,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getResolutionStrategiesContent() {
         return `
             <div class="resolution-strategies">
@@ -857,7 +857,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getConflictPreventionContent() {
         return `
             <div class="conflict-prevention">
@@ -883,7 +883,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getExercise5Content() {
         return `
             <div class="exercise">
@@ -899,7 +899,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     // Continue with remaining methods...
     getIssuesContent() {
         return `
@@ -927,7 +927,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     // Add more content methods as needed...
     getSemanticCommitsContent() {
         return `
@@ -962,7 +962,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     getFinalSummaryContent() {
         return `
             <div class="final-summary">
@@ -988,7 +988,7 @@ Se aplicável, adicione capturas de tela
             </div>
         `;
     }
-    
+
     // Default methods for remaining slides
     getIssueTemplatesContent() { return `<p>Templates para padronizar Issues</p>`; }
     getLabelsContent() { return `<p>Sistema de etiquetas para organização</p>`; }

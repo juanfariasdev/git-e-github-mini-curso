@@ -44,12 +44,6 @@ class GitPresentationController {
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
         
-        // Click to advance (except on interactive elements)
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-btn, .fullscreen-btn, input, button, a, .checklist, .exercise')) {
-                this.nextSlide();
-            }
-        });
         
         // Fullscreen change events
         document.addEventListener('fullscreenchange', () => this.handleFullscreenChange());

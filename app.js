@@ -242,151 +242,161 @@ class GitPresentationController {
             1: {
                 title: "🎯 Mini Curso Git e GitHub",
                 content: `
-                <h3>para Trabalho em Equipe</h3>
-                <div class="course-details">
-                <p><strong>Duração:</strong> 3 horas e 30 minutos</p>
-                <p><strong>Horário:</strong> 13:15 - 17:00</p>
-                <p><strong>Foco:</strong> Colaboração e trabalho em equipe</p>
-                </div>
-                <div class="git-logos">
-                <div class="git-logo">Git</div>
-                <div class="github-logo">GitHub</div>
-                </div>
+            <h3>para Trabalho em Equipe</h3>
+            <div class="course-details">
+            <p><strong>Duração:</strong> 3 horas e 30 minutos</p>
+            <p><strong>Horário:</strong> 13:15 - 17:00</p>
+            <p><strong>Foco:</strong> Colaboração e trabalho em equipe</p>
+            </div>
+            <div class="git-logos">
+            <div class="git-logo">Git</div>
+            <div class="github-logo">GitHub</div>
+            </div>
             `
             },
             2: {
                 title: "📅 Agenda do Curso",
                 content: `
-                <div class="schedule">
-                <div class="schedule-item">
-                    <span class="time">13:15 - 13:35</span>
-                    <span class="module">📚 Introdução e Revisão</span>
-                    <span class="duration">20 min</span>
-                </div>
-                <div class="schedule-item">
-                    <span class="time">13:35 - 14:15</span>
-                    <span class="module">🤝 Fundamentos Colaborativos</span>
-                    <span class="duration">40 min</span>
-                </div>
-                <div class="schedule-item">
-                    <span class="time">14:15 - 15:05</span>
-                    <span class="module">🌳 Estratégias de Branching</span>
-                    <span class="duration">50 min</span>
-                </div>
-                <div class="schedule-item break">
-                    <span class="time">15:05 - 15:20</span>
-                    <span class="module">☕ INTERVALO</span>
-                    <span class="duration">15 min</span>
-                </div>
-                <div class="schedule-item">
-                    <span class="time">15:20 - 16:05</span>
-                    <span class="module">🔄 Pull Requests e Code Review</span>
-                    <span class="duration">45 min</span>
-                </div>
-                <div class="schedule-item">
-                    <span class="time">16:05 - 16:35</span>
-                    <span class="module">⚔️ Resolução de Conflitos</span>
-                    <span class="duration">30 min</span>
-                </div>
-                <div class="schedule-item">
-                    <span class="time">16:35 - 16:50</span>
-                    <span class="module">📊 Organização e Gestão</span>
-                    <span class="duration">15 min</span>
-                </div>
-                <div class="schedule-item">
-                    <span class="time">16:50 - 17:00</span>
-                    <span class="module">⭐ Boas Práticas</span>
-                    <span class="duration">10 min</span>
-                </div>
-                </div>
+            <div class="schedule">
+            <div class="schedule-item">
+                <span class="time">13:15 - 13:35</span>
+                <span class="module">📚 Introdução e Revisão</span>
+                <span class="duration">20 min</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">13:35 - 14:15</span>
+                <span class="module">🤝 Fundamentos Colaborativos</span>
+                <span class="duration">40 min</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">14:15 - 15:05</span>
+                <span class="module">🌳 Estratégias de Branching</span>
+                <span class="duration">50 min</span>
+            </div>
+            <div class="schedule-item break">
+                <span class="time">15:05 - 15:20</span>
+                <span class="module">☕ INTERVALO</span>
+                <span class="duration">15 min</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">15:20 - 16:05</span>
+                <span class="module">🔄 Pull Requests e Code Review</span>
+                <span class="duration">45 min</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">16:05 - 16:35</span>
+                <span class="module">⚔️ Resolução de Conflitos</span>
+                <span class="duration">30 min</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">16:35 - 16:50</span>
+                <span class="module">📊 Organização e Gestão</span>
+                <span class="duration">15 min</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">16:50 - 17:00</span>
+                <span class="module">⭐ Boas Práticas</span>
+                <span class="duration">10 min</span>
+            </div>
+            </div>
             `
             },
             3: {
                 title: "🚫 Problemas Comuns em Equipes",
                 content: `
-                <div class="problems-grid">
-                <div class="problem-item">
-                    <h3>🔄 Conflitos Constantes</h3>
-                    <p>Alterações simultâneas no mesmo arquivo geram conflitos difíceis de resolver</p>
-                </div>
-                <div class="problem-item">
-                    <h3>📚 Histórico Confuso</h3>
-                    <p>Commits desorganizados e mensagens pouco descritivas</p>
-                </div>
-                <div class="problem-item">
-                    <h3>🏗️ Falta de Padronização</h3>
-                    <p>Cada desenvolvedor usa um fluxo diferente de trabalho</p>
-                </div>
-                <div class="problem-item">
-                    <h3>🔍 Dificuldade de Review</h3>
-                    <p>Pull requests extensos e difíceis de revisar</p>
-                </div>
-                <div class="problem-item">
-                    <h3>🚀 Deploy Arriscado</h3>
-                    <p>Medo de fazer deploy por falta de confiança no código</p>
-                </div>
-                <div class="problem-item">
-                    <h3>📱 Comunicação Falha</h3>
-                    <p>Falta de rastreabilidade entre tarefas e código</p>
-                </div>
-                </div>
+            <div class="problems-grid">
+            <div class="problem-item">
+                <h3>🔄 Conflitos Constantes</h3>
+                <p>Alterações simultâneas no mesmo arquivo geram conflitos difíceis de resolver</p>
+            </div>
+            <div class="problem-item">
+                <h3>📚 Histórico Confuso</h3>
+                <p>Commits desorganizados e mensagens pouco descritivas</p>
+            </div>
+            <div class="problem-item">
+                <h3>🏗️ Falta de Padronização</h3>
+                <p>Cada desenvolvedor usa um fluxo diferente de trabalho</p>
+            </div>
+            <div class="problem-item">
+                <h3>🔍 Dificuldade de Review</h3>
+                <p>Pull requests extensos e difíceis de revisar</p>
+            </div>
+            <div class="problem-item">
+                <h3>🚀 Deploy Arriscado</h3>
+                <p>Medo de fazer deploy por falta de confiança no código</p>
+            </div>
+            <div class="problem-item">
+                <h3>📱 Comunicação Falha</h3>
+                <p>Falta de rastreabilidade entre tarefas e código</p>
+            </div>
+            </div>
             `
             },
             4: {
-                title: "🆚 Git vs GitHub",
+                title: "🆚 Git × GitHub",
                 content: `
-                <div class="comparison">
-                <div class="comparison-item">
-                    <h3>🔧 Git (Local)</h3>
-                    <ul>
-                    <li>Sistema de controle de versão distribuído</li>
-                    <li>Funciona offline</li>
-                    <li>Gerencia histórico local</li>
-                    <li>Controla branches e commits</li>
-                    <li>Ferramenta de linha de comando</li>
-                    </ul>
-                </div>
-                <div class="comparison-item">
-                    <h3>🌐 GitHub (Remoto)</h3>
-                    <ul>
-                    <li>Plataforma de hospedagem de código</li>
-                    <li>Interface web para Git</li>
-                    <li>Colaboração e compartilhamento</li>
-                    <li>Pull Requests e Code Review</li>
-                    <li>Issues, Projects e Actions</li>
-                    </ul>
-                </div>
-                </div>
+            <div class="comparison">
+            <section class="comparison-item">
+                <h3>🔧 Git (Local)</h3>
+                <ul>
+                <li>Sistema de controle de versão distribuído</li>
+                <li>Funciona offline</li>
+                <li>Gerencia histórico de commits e branches</li>
+                <li>Executado via linha de comando ou IDE</li>
+                <li>Armazena tudo na sua máquina</li>
+                </ul>
+                </section>
+                <section class="comparison-item">
+                <h3>🌐 GitHub (Remoto)</h3>
+                <ul>
+                <li>Plataforma de hospedagem de repositórios Git</li>
+                <li>Interface web para Pull Requests e Code Review</li>
+                <li>Ferramentas de Issues, Projects e Actions</li>
+                <li>Colaboração e compartilhamento em nuvem</li>
+                <li>Integra com CI/CD e automações</li>
+                </ul>
+            </section>
+            </div>
             `
             },
+
             5: {
-                title: "⚡ Comandos Básicos - Revisão",
+                title: "⚡ Comandos Básicos – Revisão",
                 content: `
-                <div class="commands-grid">
-                <div class="command-block">
-                    <h3>Configuração Inicial</h3>
-                    <pre><code>git config --global user.name "Seu Nome"
-    git config --global user.email "seu@email.com"</code></pre>
-                </div>
-                <div class="command-block">
-                    <h3>Iniciar Repositório</h3>
-                    <pre><code>git init
-    git clone https://github.com/user/repo.git</code></pre>
-                </div>
-                <div class="command-block">
-                    <h3>Comandos Básicos</h3>
-                    <pre><code>git add .
-    git commit -m "Mensagem do commit"
-    git push origin main</code></pre>
-                </div>
-                <div class="command-block">
-                    <h3>Status e Histórico</h3>
-                    <pre><code>git status
-    git log --oneline
-    git diff</code></pre>
-                </div>
-                </div>
-            `
+        <div style="display: grid; gap: 20px;">
+
+            <section class="command-block">
+            <h3>1. Configuração Inicial (uma única vez)</h3>
+            <pre><code class="language-bash">
+        git config --global user.name  "Seu Nome"   # identifica autor dos commits
+        git config --global user.email "seu@email.com"</code></pre>
+            </section>
+
+            <section class="command-block">
+            <h3>2. Criar ou Clonar Repositório</h3>
+            <pre><code class="language-bash">
+        git init                          # transforma pasta em repositório
+        git clone &lt;url&gt;                   # baixa cópia existente</code></pre>
+            </section>
+
+            <section class="command-block">
+            <h3>3. Fluxo Diário</h3>
+            <pre><code class="language-bash">
+        git add &lt;arquivo&gt;                 # envia arquivo à staging area
+        git commit -m "feat: mensagem"    # salva snapshot
+        git push origin main              # envia ao GitHub</code></pre>
+            </section>
+
+            <section class="command-block">
+            <h3>4. Acompanhar Estado</h3>
+            <pre><code class="language-bash">
+        git status                        # arquivos modificados
+        git log --oneline                 # histórico resumido
+        git diff                          # diferenças não commitadas</code></pre>
+            </section>
+
+        </div>
+        `
             },
             6: {
                 title: "🎯 Exercício Prático 1",

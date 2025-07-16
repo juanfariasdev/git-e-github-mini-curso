@@ -401,23 +401,34 @@ class GitPresentationController {
             6: {
                 title: "🎯 Exercício Prático 1",
                 content: `
-                <div class="exercise">
-                <h3>Verificação de Ambiente (10 minutos)</h3>
-                <div class="checklist">
-                    <label><input type="checkbox"> Verificar instalação do Git</label>
-                    <label><input type="checkbox"> Configurar nome e email</label>
-                    <label><input type="checkbox"> Gerar chave SSH</label>
-                    <label><input type="checkbox"> Testar conexão com GitHub</label>
-                    <label><input type="checkbox"> Clonar repositório de exemplo</label>
-                </div>
-                <div class="exercise-commands">
-                    <h4>Comandos para verificação:</h4>
-                    <pre><code>git --version
-    git config --list
-    ssh-keygen -t ed25519 -C "seu@email.com"
-    ssh -T git@github.com</code></pre>
-                </div>
-                </div>
+            <div class="exercise">
+            <h3>Verificação de Ambiente (10 minutos)</h3>
+            <div class="checklist">
+            <label><input type="checkbox"> git config --global user.name "Seu Nome"</label>
+            <label><input type="checkbox"> git config --global user.email "seu@email.com"</label>
+            <label><input type="checkbox"> Criar pasta e executar git init</label>
+            <label><input type="checkbox"> Testar git status para ver repositório vazio</label>
+            <label><input type="checkbox"> Criar arquivo exemplo.txt</label>
+            <label><input type="checkbox"> git add exemplo.txt</label>
+            <label><input type="checkbox"> git commit -m "feat: adicionar arquivo exemplo"</label>
+            <label><input type="checkbox"> git log --oneline para ver histórico</label>
+            </div>
+            <div class="exercise-commands">
+            <h4>Comandos para verificação:</h4>
+            <pre><code>
+        git --version
+        git config --list
+        mkdir projeto-teste
+        cd projeto-teste
+        git init
+        git status
+        echo "Meu primeiro projeto" > exemplo.txt
+        git add exemplo.txt
+        git commit -m "feat: adicionar arquivo exemplo"
+        git log --oneline
+        </code></pre>
+            </div>
+            </div>
             `
             },
             7: {

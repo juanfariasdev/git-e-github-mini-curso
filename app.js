@@ -18,6 +18,7 @@ class GitPresentationController {
         ];
 
         this.init();
+        this.goToSlide(1);
     }
 
     init() {
@@ -238,6 +239,269 @@ class GitPresentationController {
 
     getSlideData(slideNumber) {
         const slideMap = {
+            1: {
+                title: "🎯 Mini Curso Git e GitHub",
+                content: `
+                <h3>para Trabalho em Equipe</h3>
+                <div class="course-details">
+                <p><strong>Duração:</strong> 3 horas e 30 minutos</p>
+                <p><strong>Horário:</strong> 13:15 - 17:00</p>
+                <p><strong>Foco:</strong> Colaboração e trabalho em equipe</p>
+                </div>
+                <div class="git-logos">
+                <div class="git-logo">Git</div>
+                <div class="github-logo">GitHub</div>
+                </div>
+            `
+            },
+            2: {
+                title: "📅 Agenda do Curso",
+                content: `
+                <div class="schedule">
+                <div class="schedule-item">
+                    <span class="time">13:15 - 13:35</span>
+                    <span class="module">📚 Introdução e Revisão</span>
+                    <span class="duration">20 min</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">13:35 - 14:15</span>
+                    <span class="module">🤝 Fundamentos Colaborativos</span>
+                    <span class="duration">40 min</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">14:15 - 15:05</span>
+                    <span class="module">🌳 Estratégias de Branching</span>
+                    <span class="duration">50 min</span>
+                </div>
+                <div class="schedule-item break">
+                    <span class="time">15:05 - 15:20</span>
+                    <span class="module">☕ INTERVALO</span>
+                    <span class="duration">15 min</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">15:20 - 16:05</span>
+                    <span class="module">🔄 Pull Requests e Code Review</span>
+                    <span class="duration">45 min</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">16:05 - 16:35</span>
+                    <span class="module">⚔️ Resolução de Conflitos</span>
+                    <span class="duration">30 min</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">16:35 - 16:50</span>
+                    <span class="module">📊 Organização e Gestão</span>
+                    <span class="duration">15 min</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">16:50 - 17:00</span>
+                    <span class="module">⭐ Boas Práticas</span>
+                    <span class="duration">10 min</span>
+                </div>
+                </div>
+            `
+            },
+            3: {
+                title: "🚫 Problemas Comuns em Equipes",
+                content: `
+                <div class="problems-grid">
+                <div class="problem-item">
+                    <h3>🔄 Conflitos Constantes</h3>
+                    <p>Alterações simultâneas no mesmo arquivo geram conflitos difíceis de resolver</p>
+                </div>
+                <div class="problem-item">
+                    <h3>📚 Histórico Confuso</h3>
+                    <p>Commits desorganizados e mensagens pouco descritivas</p>
+                </div>
+                <div class="problem-item">
+                    <h3>🏗️ Falta de Padronização</h3>
+                    <p>Cada desenvolvedor usa um fluxo diferente de trabalho</p>
+                </div>
+                <div class="problem-item">
+                    <h3>🔍 Dificuldade de Review</h3>
+                    <p>Pull requests extensos e difíceis de revisar</p>
+                </div>
+                <div class="problem-item">
+                    <h3>🚀 Deploy Arriscado</h3>
+                    <p>Medo de fazer deploy por falta de confiança no código</p>
+                </div>
+                <div class="problem-item">
+                    <h3>📱 Comunicação Falha</h3>
+                    <p>Falta de rastreabilidade entre tarefas e código</p>
+                </div>
+                </div>
+            `
+            },
+            4: {
+                title: "🆚 Git vs GitHub",
+                content: `
+                <div class="comparison">
+                <div class="comparison-item">
+                    <h3>🔧 Git (Local)</h3>
+                    <ul>
+                    <li>Sistema de controle de versão distribuído</li>
+                    <li>Funciona offline</li>
+                    <li>Gerencia histórico local</li>
+                    <li>Controla branches e commits</li>
+                    <li>Ferramenta de linha de comando</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h3>🌐 GitHub (Remoto)</h3>
+                    <ul>
+                    <li>Plataforma de hospedagem de código</li>
+                    <li>Interface web para Git</li>
+                    <li>Colaboração e compartilhamento</li>
+                    <li>Pull Requests e Code Review</li>
+                    <li>Issues, Projects e Actions</li>
+                    </ul>
+                </div>
+                </div>
+            `
+            },
+            5: {
+                title: "⚡ Comandos Básicos - Revisão",
+                content: `
+                <div class="commands-grid">
+                <div class="command-block">
+                    <h3>Configuração Inicial</h3>
+                    <pre><code>git config --global user.name "Seu Nome"
+    git config --global user.email "seu@email.com"</code></pre>
+                </div>
+                <div class="command-block">
+                    <h3>Iniciar Repositório</h3>
+                    <pre><code>git init
+    git clone https://github.com/user/repo.git</code></pre>
+                </div>
+                <div class="command-block">
+                    <h3>Comandos Básicos</h3>
+                    <pre><code>git add .
+    git commit -m "Mensagem do commit"
+    git push origin main</code></pre>
+                </div>
+                <div class="command-block">
+                    <h3>Status e Histórico</h3>
+                    <pre><code>git status
+    git log --oneline
+    git diff</code></pre>
+                </div>
+                </div>
+            `
+            },
+            6: {
+                title: "🎯 Exercício Prático 1",
+                content: `
+                <div class="exercise">
+                <h3>Verificação de Ambiente (10 minutos)</h3>
+                <div class="checklist">
+                    <label><input type="checkbox"> Verificar instalação do Git</label>
+                    <label><input type="checkbox"> Configurar nome e email</label>
+                    <label><input type="checkbox"> Gerar chave SSH</label>
+                    <label><input type="checkbox"> Testar conexão com GitHub</label>
+                    <label><input type="checkbox"> Clonar repositório de exemplo</label>
+                </div>
+                <div class="exercise-commands">
+                    <h4>Comandos para verificação:</h4>
+                    <pre><code>git --version
+    git config --list
+    ssh-keygen -t ed25519 -C "seu@email.com"
+    ssh -T git@github.com</code></pre>
+                </div>
+                </div>
+            `
+            },
+            7: {
+                title: "🤝 Conceitos de Colaboração",
+                content: `
+                <div class="collaboration-flow">
+                <div class="flow-item">
+                    <h3>📦 Repositório Distribuído</h3>
+                    <p>Cada desenvolvedor tem uma cópia completa do projeto</p>
+                </div>
+                <div class="flow-item">
+                    <h3>🔄 Fluxo Básico</h3>
+                    <ol>
+                    <li>Clone do repositório</li>
+                    <li>Criação de branch</li>
+                    <li>Desenvolvimento</li>
+                    <li>Commit das mudanças</li>
+                    <li>Push da branch</li>
+                    <li>Pull Request</li>
+                    <li>Review e merge</li>
+                    </ol>
+                </div>
+                </div>
+            `
+            },
+            8: {
+                title: "🌐 Repositórios Remotos",
+                content: `
+                <div class="remote-concepts">
+                <div class="concept">
+                    <h3>🎯 Origin</h3>
+                    <p>Repositório remoto padrão (seu fork)</p>
+                    <pre><code>git remote add origin https://github.com/seu-usuario/repo.git</code></pre>
+                </div>
+                <div class="concept">
+                    <h3>⬆️ Upstream</h3>
+                    <p>Repositório original (projeto principal)</p>
+                    <pre><code>git remote add upstream https://github.com/projeto-original/repo.git</code></pre>
+                </div>
+                <div class="concept">
+                    <h3>📋 Comandos Úteis</h3>
+                    <pre><code>git remote -v
+    git remote show origin
+    git fetch upstream
+    git pull upstream main</code></pre>
+                </div>
+                </div>
+            `
+            },
+            9: {
+                title: "🍴 Clone vs Fork",
+                content: `
+                <div class="clone-fork-comparison">
+                <div class="comparison-item">
+                    <h3>📥 Clone</h3>
+                    <ul>
+                    <li>Cópia local do repositório</li>
+                    <li>Acesso direto (se tiver permissão)</li>
+                    <li>Ideal para projetos próprios</li>
+                    <li>Push direto para o repositório</li>
+                    </ul>
+                    <pre><code>git clone https://github.com/user/repo.git</code></pre>
+                </div>
+                <div class="comparison-item">
+                    <h3>🍴 Fork</h3>
+                    <ul>
+                    <li>Cópia do repositório na sua conta</li>
+                    <li>Independente do original</li>
+                    <li>Ideal para contribuições</li>
+                    <li>Pull Request para o original</li>
+                    </ul>
+                    <pre><code># Após fork no GitHub
+    git clone https://github.com/seu-usuario/repo.git
+    git remote add upstream https://github.com/original/repo.git</code></pre>
+                </div>
+                </div>
+            `
+            },
+            10: {
+                title: "🔑 Configuração SSH",
+                content: `
+                <div class="ssh-setup">
+                <h3>1. Gerar Chave SSH</h3>
+                <pre><code>ssh-keygen -t ed25519 -C "seu@email.com"</code></pre>
+                <h3>2. Adicionar ao SSH Agent</h3>
+                <pre><code>eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519</code></pre>
+                <h3>3. Copiar Chave Pública</h3>
+                <pre><code>cat ~/.ssh/id_ed25519.pub</code></pre>
+                <h3>4. Testar Conexão</h3>
+                <pre><code>ssh -T git@github.com</code></pre>
+                </div>
+            `
+            },
             11: {
                 title: "🔐 Gestão de Credenciais",
                 content: `

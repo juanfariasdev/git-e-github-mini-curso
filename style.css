@@ -951,7 +951,7 @@ select.form-control {
 /* Commands grid */
 .commands-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: var(--space-20);
   margin-top: var(--space-24);
 }

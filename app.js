@@ -598,6 +598,7 @@ git push origin main
                                 <li>develop, feature, release, hotfix</li>
                                 <li>Mais complexo</li>
                                 <li>Ideal para releases programados</li>
+                                <img class="img-300" src="img/14-gitflow.png" alt=""/>
                             </ul>
                         </div>
                         <div class="flow-item">
@@ -607,6 +608,7 @@ git push origin main
                                 <li>Mais simples</li>
                                 <li>Deploy contínuo</li>
                                 <li>Ideal para desenvolvimento ágil</li>
+                                <img class="img-300" src="img/14-githubflow.png" alt=""/>
                             </ul>
                         </div>
                     </div>
@@ -1278,18 +1280,480 @@ Se aplicável, adicione capturas de tela
     }
 
     // Default methods for remaining slides
-    getIssueTemplatesContent() { return `<p>Templates para padronizar Issues</p>`; }
-    getLabelsContent() { return `<p>Sistema de etiquetas para organização</p>`; }
-    getProjectsContent() { return `<p>Gestão de projetos com Kanban</p>`; }
-    getMilestonesContent() { return `<p>Marcos e versões do projeto</p>`; }
-    getLinkingContent() { return `<p>Conectando Issues e Pull Requests</p>`; }
-    getExercise6Content() { return `<div class="exercise"><h3>Gestão de Projeto (10 minutos)</h3></div>`; }
-    getCommitExamplesContent() { return `<p>Exemplos práticos de commits semânticos</p>`; }
-    getCompleteWorkflowContent() { return `<p>Fluxo completo de desenvolvimento</p>`; }
-    getActionsContent() { return `<p>Automação com GitHub Actions</p>`; }
-    getMetricsContent() { return `<p>Métricas e monitoramento de projetos</p>`; }
-    getLearningResourcesContent() { return `<p>Recursos para continuar aprendendo</p>`; }
-    getNextStepsContent() { return `<p>Próximos passos após o curso</p>`; }
+    getIssueTemplatesContent() {
+        return `
+            <div class="issue-templates">
+                <h3>Padronizando Reports com Templates</h3>
+                <div class="template-info">
+                    <p>Armazenados em <code>.github/ISSUE_TEMPLATE/*.md</code> ou <code>.github/ISSUE_TEMPLATE.md</code></p>
+                    <p>Preenchem automaticamente ao criar nova issue</p>
+                </div>
+                <div class="template-example">
+                    <h4>Exemplo: Bug Report Template</h4>
+                    <pre><code>---
+name: Bug Report
+about: Reporte um bug
+title: '[BUG] '
+labels: bug
+assignees: ''
+---
+
+## Descrição do Bug
+Descrição clara e concisa do problema.
+
+## Passos para Reproduzir
+1. Ir para '...'
+2. Clicar em '...'
+3. Ver erro
+
+## Comportamento Esperado
+O que deveria acontecer.
+
+## Screenshots
+Se aplicável, adicione screenshots.
+</code></pre>
+                </div>
+            </div>
+        `;
+    }
+    getLabelsContent() {
+        return `
+            <div class="labels-system">
+                <h3>Categorias Essenciais de Labels</h3>
+                <div class="label-categories">
+                    <div class="label-category">
+                        <h4>🏷️ Tipo</h4>
+                        <div class="label-examples">
+                            <span class="label bug">bug</span>
+                            <span class="label feature">feature</span>
+                            <span class="label docs">documentation</span>
+                        </div>
+                    </div>
+                    <div class="label-category">
+                        <h4>🔥 Prioridade</h4>
+                        <div class="label-examples">
+                            <span class="label priority-high">high</span>
+                            <span class="label priority-medium">medium</span>
+                            <span class="label priority-low">low</span>
+                        </div>
+                    </div>
+                    <div class="label-category">
+                        <h4>🚦 Status</h4>
+                        <div class="label-examples">
+                            <span class="label in-progress">in-progress</span>
+                            <span class="label review">review</span>
+                            <span class="label blocked">blocked</span>
+                        </div>
+                    </div>
+                    <div class="label-category">
+                        <h4>💪 Dificuldade</h4>
+                        <div class="label-examples">
+                            <span class="label beginner">good-first-issue</span>
+                            <span class="label expert">expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    getProjectsContent() {
+        return `
+            <div class="projects-content">
+                <h3>Kanban Board</h3>
+                <div class="kanban-board">
+                    <div class="kanban-column todo">
+                        <h4>📋 To Do</h4>
+                        <p>Tarefas planejadas</p>
+                    </div>
+                    <div class="kanban-column in-progress">
+                        <h4>⚙️ In Progress</h4>
+                        <p>Em desenvolvimento</p>
+                    </div>
+                    <div class="kanban-column review">
+                        <h4>👀 Review</h4>
+                        <p>Aguardando revisão</p>
+                    </div>
+                    <div class="kanban-column done">
+                        <h4>✅ Done</h4>
+                        <p>Concluído</p>
+                    </div>
+                </div>
+                <div class="automation-section">
+                    <h3>🤖 Automação</h3>
+                    <div class="automation-rules">
+                        <div class="rule-item">
+                            <span class="rule-trigger">Issues Criadas</span>
+                            <span class="rule-arrow">→</span>
+                            <span class="rule-action">To Do (automático)</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-trigger">PR Aberto</span>
+                            <span class="rule-arrow">→</span>
+                            <span class="rule-action">In Progress (automático)</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-trigger">PR Merged</span>
+                            <span class="rule-arrow">→</span>
+                            <span class="rule-action">Done (automático)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    getMilestonesContent() {
+        return `
+            <div class="milestones-content">
+                <h3>Organização por Objetivos</h3>
+                <div class="milestone-types">
+                    <div class="milestone-type">
+                        <h4>🚀 Releases Específicos</h4>
+                        <p>Versões planejadas do software</p>
+                    </div>
+                    <div class="milestone-type">
+                        <h4>🏃 Sprints de Desenvolvimento</h4>
+                        <p>Ciclos de trabalho definidos</p>
+                    </div>
+                    <div class="milestone-type">
+                        <h4>🎯 Metas de Projeto</h4>
+                        <p>Objetivos estratégicos</p>
+                    </div>
+                </div>
+                
+                <h3>Exemplos</h3>
+                <div class="milestone-examples">
+                    <div class="milestone-example">
+                        <span class="milestone-badge">v1.0.0 Release</span>
+                        <div class="milestone-progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <span class="milestone-status">85% concluído</span>
+                    </div>
+                    <div class="milestone-example">
+                        <span class="milestone-badge">Sprint 1 - Autenticação</span>
+                        <div class="milestone-progress">
+                            <div class="progress-bar" style="width: 100%"></div>
+                        </div>
+                        <span class="milestone-status">Concluído</span>
+                    </div>
+                    <div class="milestone-example">
+                        <span class="milestone-badge">Q1 2024 Goals</span>
+                        <div class="milestone-progress">
+                            <div class="progress-bar" style="width: 35%"></div>
+                        </div>
+                        <span class="milestone-status">35% concluído</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    getLinkingContent() {
+        return `
+            <div class="linking-content">
+                <h3>Palavras-chave</h3>
+                <div class="keywords-examples">
+                    <div class="keyword-item">
+                        <code>closes #123</code>
+                        <p>Fecha a issue quando o PR for mesclado</p>
+                    </div>
+                    <div class="keyword-item">
+                        <code>fixes #123</code>
+                        <p>Marca como corrigido após o merge</p>
+                    </div>
+                    <div class="keyword-item">
+                        <code>resolves #123</code>
+                        <p>Resolve e fecha a issue</p>
+                    </div>
+                    <div class="keyword-item">
+                        <code>relates to #123</code>
+                        <p>Cria referência sem fechar</p>
+                    </div>
+                </div>
+                
+                <h3>Benefícios</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h4>🔄 Fechamento Automático</h4>
+                        <p>Issues fechadas ao fazer merge</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>🔍 Rastreabilidade</h4>
+                        <p>Conexão clara entre código e problema</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>📝 Documentação</h4>
+                        <p>Registro de decisões e soluções</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    getExercise6Content() {
+        return `
+            <div class="exercise">
+                <h3>Gestão de Projeto (10 minutos)</h3>
+                <div class="checklist">
+                    <label><input type="checkbox"> Criar issue com template</label>
+                    <label><input type="checkbox"> Adicionar labels apropriados</label>
+                    <label><input type="checkbox"> Configurar projeto kanban</label>
+                    <label><input type="checkbox"> Criar milestone</label>
+                    <label><input type="checkbox"> Linkar PR com issue</label>
+                </div>
+                <div class="exercise-commands">
+                    <h4>Dicas:</h4>
+                    <ul>
+                        <li>Use palavras-chave como "closes", "fixes", "resolves" seguidas de #issue-number</li>
+                        <li>Organize suas colunas como "To Do", "In Progress", "Review", "Done"</li>
+                        <li>Crie um milestone para a versão atual do projeto</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    getCommitExamplesContent() {
+        return `
+            <div class="commit-examples">
+                <h3>Bons Exemplos:</h3>
+                <div class="good-commit">
+                    <pre><code>feat(auth): adicionar login com OAuth
+
+Implementa autenticação via Google OAuth 2.0
+- Adiciona botão de login
+- Configura redirect URI
+- Valida tokens JWT
+
+Closes #123</code></pre>
+                </div>
+                
+                <h3>Maus Exemplos:</h3>
+                <div class="bad-commits">
+                    <div class="bad-commit-examples">
+                        <span class="bad-commit">fix stuff</span>
+                        <span class="bad-commit">update</span>
+                        <span class="bad-commit">changes</span>
+                        <span class="bad-commit">wip</span>
+                    </div>
+                    <p>⚠️ Commits vagos dificultam o entendimento do histórico</p>
+                </div>
+            </div>
+        `;
+    }
+
+    getCompleteWorkflowContent() {
+        return `
+            <div class="workflow-steps">
+                <h3>Fluxo Ideal de Desenvolvimento</h3>
+                <ol class="workflow-list">
+                    <li><strong>Issue criado</strong> - Documentar o problema ou feature</li>
+                    <li><strong>Branch criada</strong> - <code>feature/descricao-curta</code></li>
+                    <li><strong>Desenvolvimento</strong> - Implementação da solução</li>
+                    <li><strong>Commits semânticos</strong> - <code>feat/fix/docs/etc:</code></li>
+                    <li><strong>Pull Request</strong> - Descrição completa e links</li>
+                    <li><strong>Code Review</strong> - Feedback construtivo</li>
+                    <li><strong>Merge</strong> - Integração ao main</li>
+                    <li><strong>Deploy</strong> - Entrega ao ambiente</li>
+                    <li><strong>Issue fechado</strong> - Ciclo completo</li>
+                </ol>
+            </div>
+        `;
+    }
+
+    getActionsContent() {
+        return `
+            <div class="actions-content">
+                <h3>Automação com GitHub Actions</h3>
+                <div class="action-example">
+                    <h4>Exemplo Básico:</h4>
+                    <pre><code>name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: npm test</code></pre>
+                </div>
+                <div class="actions-usecases">
+                    <h4>Casos de Uso Comuns:</h4>
+                    <ul>
+                        <li>🧪 Execução de testes</li>
+                        <li>🔍 Análise de qualidade de código</li>
+                        <li>📦 Build e deploy automáticos</li>
+                        <li>🤖 Resposta automática a issues</li>
+                        <li>📅 Tarefas programadas</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    getMetricsContent() {
+        return `
+            <div class="metrics-content">
+                <h3>Indicadores Importantes</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <h4>⏱️ Tempo de Review</h4>
+                        <p>Quanto tempo PRs ficam abertos</p>
+                    </div>
+                    <div class="metric-item">
+                        <h4>⚔️ Conflitos</h4>
+                        <p>Frequência de conflitos no merge</p>
+                    </div>
+                    <div class="metric-item">
+                        <h4>📊 Frequência de Commits</h4>
+                        <p>Ritmo de desenvolvimento</p>
+                    </div>
+                    <div class="metric-item">
+                        <h4>🧪 Cobertura de Testes</h4>
+                        <p>Porcentagem de código testado</p>
+                    </div>
+                </div>
+                <div class="tools-section">
+                    <h3>Ferramentas:</h3>
+                    <ul class="tools-list">
+                        <li>GitHub Insights</li>
+                        <li>Pull Request Analytics</li>
+                        <li>Code Frequency Graphs</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    getLearningResourcesContent() {
+        return `
+            <div class="learning-resources">
+                <div class="resource-category">
+                    <h3>📚 Documentação</h3>
+                    <ul>
+                        <li><a href="https://docs.github.com">GitHub Docs</a></li>
+                        <li><a href="https://git-scm.com/doc">Git Documentation</a></li>
+                        <li><a href="https://www.atlassian.com/git/tutorials">Atlassian Git Tutorials</a></li>
+                    </ul>
+                </div>
+                <div class="resource-category">
+                    <h3>🎓 Cursos</h3>
+                    <ul>
+                        <li>GitHub Learning Lab</li>
+                        <li>Pro Git (livro gratuito)</li>
+                        <li>Udacity Git Course</li>
+                    </ul>
+                </div>
+                <div class="resource-category">
+                    <h3>🛠️ Ferramentas</h3>
+                    <ul>
+                        <li>Git Kraken</li>
+                        <li>GitHub Desktop</li>
+                        <li>Visual Studio Code + Git Extensions</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+    getNextStepsContent() {
+        return `
+            <div class="next-steps">
+                <h3>Para Continuar Aprendendo</h3>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <h4>🚀 Pratique em projetos pessoais</h4>
+                        <p>Aplique os conceitos em seus próprios projetos</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>🌟 Contribua para projetos open source</h4>
+                        <p>Experimente o fluxo em projetos reais</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>🤖 Explore GitHub Actions</h4>
+                        <p>Automatize seu fluxo de trabalho</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>🔍 Estude Git avançado</h4>
+                        <p>Rebase interativo, bisect, reflog</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>👥 Participe de comunidades</h4>
+                        <p>Compartilhe conhecimento e aprenda mais</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    getFinalSummaryContent() {
+        return `
+            <div class="final-summary">
+                <h3>Principais Conceitos</h3>
+                <div class="concepts-grid">
+                    <div class="concept-item">
+                        <h4>🤝 Colaboração efetiva com Git/GitHub</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>🌳 Estratégias de branching</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>🔄 Pull Requests e Code Review</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>⚔️ Resolução de conflitos</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>📊 Organização de projetos</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>⭐ Boas práticas</h4>
+                    </div>
+                </div>
+                
+                <h3>Lembre-se</h3>
+                <div class="reminders">
+                    <div class="reminder-item">
+                        <h4>📝 Commits pequenos e frequentes</h4>
+                    </div>
+                    <div class="reminder-item">
+                        <h4>💬 Comunicação clara</h4>
+                    </div>
+                    <div class="reminder-item">
+                        <h4>🔍 Revisão construtiva</h4>
+                    </div>
+                    <div class="reminder-item">
+                        <h4>📚 Documentação adequada</h4>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    getThankYouContent() {
+        return `
+            <div class="thank-you">
+                <h2>Obrigado!</h2>
+                <div class="contact-info">
+                    <h3>Contato</h3>
+                    <div class="contacts-grid">
+                        <div class="contact-item">
+                            <h4>📧 Email:</h4>
+                            <p>Juan e Amanda</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>🐙 GitHub:</h4>
+                            <p>juanfariasdev e Amanda</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>💼 LinkedIn:</h4>
+                            <p>Juan e Amanda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
 }
 
 // Initialize presentation when DOM is loaded

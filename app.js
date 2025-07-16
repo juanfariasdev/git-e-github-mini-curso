@@ -598,6 +598,7 @@ git push origin main
                                 <li>develop, feature, release, hotfix</li>
                                 <li>Mais complexo</li>
                                 <li>Ideal para releases programados</li>
+                                <img class="img-300" src="img/14-gitflow.png" alt=""/>
                             </ul>
                         </div>
                         <div class="flow-item">
@@ -607,6 +608,7 @@ git push origin main
                                 <li>Mais simples</li>
                                 <li>Deploy contínuo</li>
                                 <li>Ideal para desenvolvimento ágil</li>
+                                <img class="img-300" src="img/14-githubflow.png" alt=""/>
                             </ul>
                         </div>
                     </div>

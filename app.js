@@ -1656,7 +1656,104 @@ jobs:
             </div>
         `;
     }
-    getNextStepsContent() { return `<p>Próximos passos após o curso</p>`; }
+    getNextStepsContent() {
+        return `
+            <div class="next-steps">
+                <h3>Para Continuar Aprendendo</h3>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <h4>🚀 Pratique em projetos pessoais</h4>
+                        <p>Aplique os conceitos em seus próprios projetos</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>🌟 Contribua para projetos open source</h4>
+                        <p>Experimente o fluxo em projetos reais</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>🤖 Explore GitHub Actions</h4>
+                        <p>Automatize seu fluxo de trabalho</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>🔍 Estude Git avançado</h4>
+                        <p>Rebase interativo, bisect, reflog</p>
+                    </div>
+                    <div class="step-item">
+                        <h4>👥 Participe de comunidades</h4>
+                        <p>Compartilhe conhecimento e aprenda mais</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    getFinalSummaryContent() {
+        return `
+            <div class="final-summary">
+                <h3>Principais Conceitos</h3>
+                <div class="concepts-grid">
+                    <div class="concept-item">
+                        <h4>🤝 Colaboração efetiva com Git/GitHub</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>🌳 Estratégias de branching</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>🔄 Pull Requests e Code Review</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>⚔️ Resolução de conflitos</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>📊 Organização de projetos</h4>
+                    </div>
+                    <div class="concept-item">
+                        <h4>⭐ Boas práticas</h4>
+                    </div>
+                </div>
+                
+                <h3>Lembre-se</h3>
+                <div class="reminders">
+                    <div class="reminder-item">
+                        <h4>📝 Commits pequenos e frequentes</h4>
+                    </div>
+                    <div class="reminder-item">
+                        <h4>💬 Comunicação clara</h4>
+                    </div>
+                    <div class="reminder-item">
+                        <h4>🔍 Revisão construtiva</h4>
+                    </div>
+                    <div class="reminder-item">
+                        <h4>📚 Documentação adequada</h4>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    getThankYouContent() {
+        return `
+            <div class="thank-you">
+                <h2>Obrigado!</h2>
+                <div class="contact-info">
+                    <h3>Contato</h3>
+                    <div class="contacts-grid">
+                        <div class="contact-item">
+                            <h4>📧 Email:</h4>
+                            <p>Juan e Amanda</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>🐙 GitHub:</h4>
+                            <p>juanfariasdev e Amanda</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>💼 LinkedIn:</h4>
+                            <p>Juan e Amanda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
 }
 
 // Initialize presentation when DOM is loaded

@@ -42,7 +42,7 @@ Ao final do curso, você será capaz de:
 ## 🏋️‍♀️ Responsáveis
 
 - Juan Pablo Farias - [@JuanFariasDev](https://github.com/juanfariasdev/)
-- Amanda Dias- [@AmandaDiasF](https://github.com/amandadiasf)
+- Amanda Dias - [@AmandaDiasF](https://github.com/amandadiasf)
 
 ---
 

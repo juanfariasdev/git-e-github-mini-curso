@@ -39,6 +39,11 @@ Ao final do curso, você será capaz de:
 - Resolver conflitos de merge colaborativamente
 - Organizar projetos usando as ferramentas do GitHub
 
+## 🏋️‍♀️ Responsáveis
+
+- Juan Pablo Farias - [@JuanFariasDev](https://github.com/juanfariasdev/)
+- Amanda Dias- [@AmandaDiasF](https://github.com/amandadiasf)
+
 ---
 
 *Material desenvolvido para o VII Computer Day - IFSULDEMINAS Campus Machado*

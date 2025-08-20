@@ -1,6 +1,7 @@
 # Mini Curso: Git e GitHub para Trabalho em Equipe
 
 Este repositório contém todos os materiais e documentos do mini curso de Git e GitHub apresentado no VII Computer Day do IFSULDEMINAS - campus Machado.
+Link: [Clique Aqui](http://juanfariasdev.github.io/git-e-github-mini-curso/)
 
 ## 📋 Sobre o Curso
 
